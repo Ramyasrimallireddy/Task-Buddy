@@ -1,31 +1,45 @@
-function TaskList({tasks, updateTask, deleteTask}){
-    const toggleComplete = (index)=>{
-        const updatedTasks = {...tasks[index], completed: !tasks[index].completed};
-        updateTask(index, updatedTasks);
-        
-    }
-    return(
-        <>
-            <div className="tasklist">
-                <ul>
-                    {tasks.map((task,index)=>(
-                        <li key={index}>
-                            <div>
-                                <span>{task.text}</span>
-                            
-                                <small>({task.priority} {task.category})</small>
-                            </div>
-                            <div>
-                                <button 
-                                    onClick={()=>toggleComplete(index)}>{task.completed? "undo" : "Complete"}</button>
-                                <button onClick={()=>deleteTask(index)}>Delete</button>
-                            </div>
-                            
-                        </li>
-                    ))}
-                </ul>
+function TaskList({ tasks, updateTask, deleteTask }) {
+  const toggleComplete = (index) => {
+    updateTask(index, {
+      ...tasks[index],
+      completed: !tasks[index].completed,
+    });
+  };
+
+  return (
+    <div className="tasklist">
+      <ul>
+        {tasks.map((task, index) => (
+          <li
+            key={index}
+            className={`task-item ${task.completed ? "completed" : ""}`}
+          >
+            <div className="task-info">
+              <span className="task-text">{task.text}</span>
+
+              <div className="badges">
+                <span className={`badge ${task.priority.toLowerCase()}`}>
+                  {task.priority}
+                </span>
+                <span className="badge category">{task.category}</span>
+              </div>
             </div>
-        </>
-    )
+
+            <div className="actions">
+              <button onClick={() => toggleComplete(index)}>
+                {task.completed ? "Undo" : "Complete"}
+              </button>
+              <button className="delete" onClick={() => deleteTask(index)}>
+                Delete
+              </button>
+
+              {task.completed && <span className="tick">✔</span>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
-export  default TaskList
+
+export default TaskList;

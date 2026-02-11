@@ -1,0 +1,437 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* App container */
+#root {
+  width: 100%;
+}
+
+/* Main App layout */
+.app {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* App title */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  color: #2e7d32;
+  animation: fadeDown 0.6s ease;
+}
+
+/* Clear All button */
+button.clear-all {
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.clear-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(244, 67, 54, 0.4);
+}
+
+button.clear-all:active {
+  transform: scale(0.96);
+}
+
+/* Title animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ------------------------ */
+
+
+/* ANIMATED BACKGROUND – soft & elegant */
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #e3f2fd,
+    #e8f5e9,
+    #ede7f6,
+    #fff3e0
+  );
+  background-size: 400% 400%;
+  animation: bgMove 14s ease infinite;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.app-container {
+  width: 720px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+.task-item {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.task-item.completed {
+  background: #edf7ed;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+.tick {
+  font-size: 20px;
+  color: #22c55e;
+  margin-left: 6px;
+}
+.actions button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.actions button:first-child {
+  background: linear-gradient(135deg, #26a69a, #00897b);
+  color: white;
+}
+
+.actions .delete {
+  background: linear-gradient(135deg, #ef5350, #d32f2f);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Task list container */
+.tasklist {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Remove default list styles */
+.tasklist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each task item */
+.tasklist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tasklist li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Left content */
+.tasklist li div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Task text */
+.tasklist span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Completed task style */
+.tasklist li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Task meta info */
+.tasklist small {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* Buttons container */
+.tasklist li div:last-child {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.tasklist button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Complete button */
+.tasklist button:first-child {
+  background: linear-gradient(135deg, #4caf50, #43a047);
+  color: #fff;
+}
+
+.tasklist button:first-child:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+/* Delete button */
+.tasklist button:last-child {
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+  color: #fff;
+}
+
+.tasklist button:last-child:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.4);
+}
+
+/* Entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------- */
+
+
+
+/* Form container */
+#task-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Input + button row */
+#inp {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Task input */
+#inp input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#inp input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+/* Add Task button */
+#inp button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4caf50, #43a047);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#inp button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+#inp button:active {
+  transform: scale(0.96);
+}
+
+/* Select buttons */
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btns select {
+  flex: 1;
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.btns select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+/* Entry animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* -------------------------------------------- */
+
+
+.progresstracker {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progresstracker p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Progress bar container */
+.progressbar {
+  width: 100%;
+  height: 18px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Actual progress */
+.progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  border-radius: 10px;
+  transition: width 0.4s ease-in-out;
+}

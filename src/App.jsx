@@ -19,17 +19,26 @@ function App(){
     const filteredTasks = tasks.filter((_,i)=> i!==index);
     setTasks(filteredTasks);
   }
+  const clearTasks = () => {
+      setTasks([]);
+   }
+   
+
   return(
     <>
-      <h1>Task Manager</h1>
-      <h6>Task friendly application</h6>
-      <Taskform addTask={addTask}/>
-      <TaskList tasks={tasks} 
-      updateTask={updateTask}
-      deleteTask={deleteTask}
-      />
-      <Progresstracker />
-      <button>Clear All Tasks</button>
+      <div>
+        <h1>Task Manager</h1>
+        
+
+        
+        <Taskform addTask={addTask}/>
+        <TaskList tasks={tasks} 
+        updateTask={updateTask}
+        deleteTask={deleteTask}
+        />
+        <Progresstracker tasks={tasks}/>
+        {tasks.length>0 && (<button onClick={clearTasks} className='clear-all'>Clear all Tasks</button>)}
+        </div>
       
     </>
   )

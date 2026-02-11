@@ -10,7 +10,7 @@ function Taskform({addTask}){
     const handleSubmit = (e)=>{
         e.preventDefault();
         addTask({text:task,priority,category,completed: false});
-        setTaskName(" ");
+        setTaskName("");
         setPriority("High");
         setCategory("General");
     }

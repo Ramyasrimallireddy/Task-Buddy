@@ -3,16 +3,16 @@ import { useState } from "react";
 
 function Taskform({addTask}){
     const [task, setTaskName] = useState("");
-    const [priority,setPriority] = useState("");
-    const [category,setCategory] = useState("");
+    const [priority,setPriority] = useState("High");
+    const [category,setCategory] = useState("General");
 
 
     const handleSubmit = (e)=>{
         e.preventDefault();
         addTask({text:task,priority,category,completed: false});
         setTaskName(" ");
-        setPriority(" ");
-        setCategory(" ");
+        setPriority("High");
+        setCategory("General");
     }
 
     return(

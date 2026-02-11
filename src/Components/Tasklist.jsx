@@ -1,13 +1,25 @@
 function TaskList({tasks, updateTask, deleteTask}){
+    const toggleComplete = (index)=>{
+        const updatedTasks = {...tasks[index], completed: !tasks[index].completed};
+        updateTask(index, updatedTasks);
+        
+    }
     return(
         <>
             <div className="tasklist">
                 <ul>
                     {tasks.map((task,index)=>(
                         <li key={index}>
-                            <span>{task.text}<small>({task.priority} - {task.category})</small></span>
-                            <button onClick={()=>updateTask(index)}>Update</button>
-                            <button onClick={()=>deleteTask(index)}>Delete</button>
+                            <div>
+                                <span>{task.text}</span>
+                            
+                                <small>({task.priority} {task.category})</small>
+                            </div>
+                            <div>
+                                <button 
+                                    onClick={()=>toggleComplete(index)}>{task.completed? "undo" : "Complete"}</button>
+                                <button onClick={()=>deleteTask(index)}>Delete</button>
+                            </div>
                             
                         </li>
                     ))}

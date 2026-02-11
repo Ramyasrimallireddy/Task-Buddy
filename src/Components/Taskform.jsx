@@ -1,13 +1,23 @@
 import { useState } from "react";
 
-function Taskform(){
+
+function Taskform({addTask}){
     const [task, setTaskName] = useState("");
     const [priority,setPriority] = useState("");
     const [category,setCategory] = useState("");
 
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        addTask({text:task,priority,category,completed: false});
+        setTaskName(" ");
+        setPriority(" ");
+        setCategory(" ");
+    }
+
     return(
         <>
-        <form id="task-form">
+        <form onSubmit={handleSubmit} id="task-form">
             <div id="inp">
                 <input type="text" placeholder="Enter task name" value={task} onChange={(e)=>setTaskName(e.target.value)}/>
                 <span><button type="submit">Add Task</button></span>
